@@ -1,0 +1,22 @@
+{% extends 'polls/base.html' %}
+
+{% block header %}
+    <h5 class="my-0 mr-md-auto font-weight-normal" href="">Опросы</h5>
+{% endblock %}
+
+
+{% block main_content %}
+
+{% if all_polls %}
+
+    {% for poll in all_polls %}
+
+        <a class="btn btn-outline-primary" href="{% url 'polls:detail' poll.id %}"><b>{{poll.poll_title}}</b></a>
+
+    {% endfor %}
+
+{% else %}
+    <p>Нет ни одного опроса, создайте его</p>
+{% endif %}
+
+{% endblock %}

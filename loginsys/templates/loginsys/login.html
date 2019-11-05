@@ -1,0 +1,25 @@
+{% extends 'polls/base.html' %}
+
+{% block header %}
+    <h5 class="my-0 mr-md-auto font-weight-normal" href="">Вход в систему</h5>
+{% endblock %}
+
+{% block main_content %}
+
+        <form action="/auth/login/" method="post">
+            {% csrf_token %}
+
+                <label for="username">Имя пользователя</label>
+                <input  type="text" name="username" id="username">
+
+
+                <label for="password">Пароль</label>
+                <input  type="password" name="password" id="password">
+
+            {% if login_error %}
+                <label class="error">{{ login_error }}</label>
+            {% endif %}
+            <input class="btn btn-outline-primary" type="submit" value="Войти">
+        </form>
+
+{% endblock %}

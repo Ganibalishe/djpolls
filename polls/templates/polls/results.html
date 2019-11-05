@@ -1,0 +1,23 @@
+{% extends 'polls/base.html' %}
+
+{% block header %}
+    <h5 class="my-0 mr-md-auto font-weight-normal" >{{poll.poll_title}}</h5>
+
+{% endblock %}
+
+{% block main_content %}
+
+<ul class="list-unstyled text-small">
+    {% for question in poll.question_set.all %}
+        <h5 class="my-0 mr-md-auto font-weight-normal" >{{question.question_text}}</h5>
+        {% for answer in question.answer_set.all %}
+            <li>{{answer.answer_text}} -- {{answer.vote}} Голосов</li>
+        {% endfor %}
+        <br>
+    {% endfor %}
+</ul>
+<br>
+ <a class="btn btn-outline-primary" href="/polls/"><b>На главную</b></a>
+
+
+{% endblock %}

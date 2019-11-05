@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Опрос</title>
+</head>
+<body class="text-center">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+
+        {% block header %}
+        {% endblock %}
+                <a class="btn btn-outline-primary" href="/polls/"><b>На главную</b></a>
+                {% if user_name %}
+                    <a class="btn btn-outline-primary" href="/auth/logout/">Выйти ({{ user_name }})</a>
+                {% else %}
+                    <a class="btn btn-outline-primary" href="/auth/login/">Войти</a>
+                {% endif %}
+
+
+</div>
+    <main role="main" class="inner cover">
+        {% block main_content %}
+        {% endblock %}
+    </main>
+
+
+</body>
+</html>
