@@ -5,7 +5,8 @@
     "fields": {
       "poll_title": "\u041e\u0442\u0434\u044b\u0445",
       "pub_date": "2019-11-03T22:49:04Z",
-      "is_active": true
+      "is_active": true,
+      "users": "[]"
     }
   },
   {
@@ -14,7 +15,8 @@
     "fields": {
       "poll_title": "\u0415\u0434\u0430",
       "pub_date": "2019-11-05T15:01:26Z",
-      "is_active": true
+      "is_active": true,
+      "users": "[]"
     }
   },
   {
@@ -23,7 +25,8 @@
     "fields": {
       "poll_title": "\u041a\u043d\u0438\u0433\u0438",
       "pub_date": "2019-11-05T20:57:52Z",
-      "is_active": true
+      "is_active": true,
+      "users": "[]"
     }
   },
   {
@@ -87,7 +90,7 @@
     "pk": 1,
     "fields": {
       "answer_text": "\u041a\u0438\u043d\u043e",
-      "vote": 1,
+      "vote": 2,
       "question": 1
     }
   },
@@ -96,7 +99,7 @@
     "pk": 2,
     "fields": {
       "answer_text": "\u0421\u043f\u043e\u0440\u0442",
-      "vote": 4,
+      "vote": 5,
       "question": 1
     }
   },
@@ -105,7 +108,7 @@
     "pk": 3,
     "fields": {
       "answer_text": "\u041f\u0440\u043e\u0433\u0443\u043b\u043a\u0438",
-      "vote": 4,
+      "vote": 5,
       "question": 1
     }
   },
@@ -114,7 +117,7 @@
     "pk": 4,
     "fields": {
       "answer_text": "\u0414\u0440\u0430\u043c\u0430",
-      "vote": 10,
+      "vote": 12,
       "question": 2
     }
   },
@@ -123,7 +126,7 @@
     "pk": 5,
     "fields": {
       "answer_text": "\u041a\u043e\u043c\u0435\u0434\u0438\u044f",
-      "vote": 9,
+      "vote": 10,
       "question": 2
     }
   },
@@ -132,7 +135,7 @@
     "pk": 6,
     "fields": {
       "answer_text": "\u043a\u0443\u0440\u0438\u0446\u0430",
-      "vote": 4,
+      "vote": 5,
       "question": 4
     }
   },
@@ -141,7 +144,7 @@
     "pk": 7,
     "fields": {
       "answer_text": "\u0413\u043e\u0432\u044f\u0434\u0438\u043d\u0430",
-      "vote": 13,
+      "vote": 15,
       "question": 4
     }
   },
@@ -150,7 +153,7 @@
     "pk": 8,
     "fields": {
       "answer_text": "\u0441\u043b\u0430\u0434\u043a\u043e\u0435",
-      "vote": 1,
+      "vote": 3,
       "question": 3
     }
   },
@@ -168,7 +171,7 @@
     "pk": 10,
     "fields": {
       "answer_text": "\u043e\u0432\u043e\u0449\u0438",
-      "vote": 1,
+      "vote": 2,
       "question": 3
     }
   },
@@ -177,7 +180,7 @@
     "pk": 11,
     "fields": {
       "answer_text": "\u041e\u0433\u0443\u0440\u0435\u0446",
-      "vote": 1,
+      "vote": 2,
       "question": 5
     }
   },
@@ -195,7 +198,7 @@
     "pk": 13,
     "fields": {
       "answer_text": "\u041f\u043e\u043c\u0438\u0434\u043e\u0440",
-      "vote": 1,
+      "vote": 2,
       "question": 5
     }
   },
@@ -204,7 +207,7 @@
     "pk": 14,
     "fields": {
       "answer_text": "\u0421\u0432\u0435\u043a\u043b\u0430",
-      "vote": 0,
+      "vote": 1,
       "question": 5
     }
   },
@@ -213,7 +216,7 @@
     "pk": 15,
     "fields": {
       "answer_text": "\u0424\u0430\u043d\u0442\u0430\u0441\u0442\u0438\u043a\u0430",
-      "vote": 0,
+      "vote": 1,
       "question": 6
     }
   },
@@ -222,7 +225,7 @@
     "pk": 16,
     "fields": {
       "answer_text": "\u0411\u0438\u043e\u0433\u0440\u0430\u0444\u0438\u044f",
-      "vote": 0,
+      "vote": 1,
       "question": 6
     }
   },
@@ -231,7 +234,7 @@
     "pk": 17,
     "fields": {
       "answer_text": "\u0443\u0436\u0430\u0441\u044b",
-      "vote": 0,
+      "vote": 2,
       "question": 6
     }
   },
@@ -249,7 +252,7 @@
     "pk": 19,
     "fields": {
       "answer_text": "\u0420\u044d\u0439 \u0411\u0440\u044d\u0434\u0431\u0435\u0440\u0438",
-      "vote": 0,
+      "vote": 1,
       "question": 7
     }
   },
@@ -258,7 +261,7 @@
     "pk": 20,
     "fields": {
       "answer_text": "\u041f\u0443\u0448\u043a\u0438\u043d",
-      "vote": 0,
+      "vote": 3,
       "question": 7
     }
   },
