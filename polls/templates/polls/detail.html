@@ -10,20 +10,24 @@
 
 {% if error_message %} <p><strong>{{error_message}}</strong></p> {% endif %}
 
-<form class="needs-validation" action="{% url 'polls:vote' poll.id %}" method="post">
-    {% csrf_token %}
-    {% for question in questions %}
-        <h5 class="my-0 mr-md-auto font-weight-normal">{{ question.question_text }}</h5>
-        <div class="d-block my-3">
-        {% for answer in question.answer_set.all %}
-            <div class="custom-control custom-radio">
-                <input class="custom-control-input" type="radio" name="answer {{ question.id }}" id="answer{{ question.id }}{{ forloop.counter }}" value="{{ answer.id }}">
-                <label class="custom-control-label" for="answer{{ question.id }}{{ forloop.counter }}">{{answer.answer_text}}</label><br>
+{% if user_name %}
+    <form class="needs-validation" action="{% url 'polls:vote' poll.id %}" method="post">
+        {% csrf_token %}
+        {% for question in questions %}
+            <h5 class="my-0 mr-md-auto font-weight-normal">{{ question.question_text }}</h5>
+            <div class="d-block my-3">
+            {% for answer in question.answer_set.all %}
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" type="radio" name="answer {{ question.id }}" id="answer{{ question.id }}{{ forloop.counter }}" value="{{ answer.id }}">
+                    <label class="custom-control-label" for="answer{{ question.id }}{{ forloop.counter }}">{{answer.answer_text}}</label><br>
+                </div>
+            {% endfor %}
             </div>
         {% endfor %}
-        </div>
-    {% endfor %}
-    <button class="btn btn-primary my-2" type="submit">Ответить</button>
-</form>
+        <button class=  "btn btn-primary my-2" type="submit">Ответить</button>
+    </form>
+{% else %}
+    <h5 class="my-0 mr-md-auto font-weight-normal">Необходимо авторизироваться на сайте</h5>
+{% endif %}
 
 {% endblock %}

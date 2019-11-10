@@ -40,6 +40,9 @@ class PollsAdmin(admin.ModelAdmin):
          {'fields': ['pub_date'],
           'classes': ['collapse']}
          ),
+        ('Прошедшие опрос:',
+         {'fields': ['users']}
+         ),
     ]
     actions = [all_polls, complete_poll, incomplete_poll]
     inlines = [QuestionInLine]

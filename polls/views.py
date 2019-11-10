@@ -3,9 +3,8 @@ from django.urls import reverse
 from django.contrib import auth
 from django.utils import timezone
 from django.views import View
-
 from .models import Question, Answer, Polls, PollsStatistic
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 
 def index(request):
@@ -18,9 +17,13 @@ def detail(request, poll_id):
     poll = get_object_or_404(Polls, pk=poll_id)
     questions = poll.question_set.all()
 
-    return render(request, 'polls/detail.html', {'poll': poll,
-                                                 'questions': questions,
-                                                 'user_name': auth.get_user(request).username})
+    if auth.get_user(request).username in poll.users:
+        return redirect('/polls/passed')
+    else:
+
+        return render(request, 'polls/detail.html', {'poll': poll,
+                                                     'questions': questions,
+                                                     'user_name': auth.get_user(request).username})
 
 
 def results(request, poll_id):
@@ -43,6 +46,16 @@ def vote(request, poll_id):
                 'error_message': 'Необходим ответ'
             })
         else:
+
             selected_answer.vote += 1
             selected_answer.save()
+    poll.users.append(auth.get_user(request).username)
+    poll.save()
     return HttpResponseRedirect(reverse('polls:results', args=(poll.id,)))
+
+
+def passed(request):
+    all_polls = Polls.objects.filter(is_active=True).order_by('-pub_date')
+    context = {'all_polls': all_polls, 'user_name': auth.get_user(request).username}
+    return render(request, 'polls/passed.html', context)
+

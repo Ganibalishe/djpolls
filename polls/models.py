@@ -1,12 +1,14 @@
 from django.contrib import admin
 from django.db import models
 from django.utils import timezone
+from django.contrib.postgres.fields import ArrayField
 
 
 class Polls(models.Model):
     poll_title = models.CharField(max_length=100, verbose_name='Опрос')
     pub_date = models.DateTimeField('Дата')
     is_active = models.BooleanField(verbose_name="Опубликован")
+    users = ArrayField(models.CharField(max_length=100,  blank=True), size=300, default=list, null=True, blank=True)
 
     def __str__(self):
         return self.poll_title
