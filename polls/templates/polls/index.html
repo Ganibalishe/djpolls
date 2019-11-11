@@ -10,8 +10,11 @@
 {% if all_polls %}
 
     {% for poll in all_polls %}
-
-        <a class="btn btn-outline-primary" href="{% url 'polls:detail' poll.id %}"><b>{{poll.poll_title}}</b></a>
+        {% if user_name in poll.users %}
+            <a class="btn btn-outline-primary" href="{% url 'polls:detail' poll.id %}"><b>{{poll.poll_title}}<br>Пройден</b></a>
+        {% else %}
+            <a class="btn btn-outline-primary" href="{% url 'polls:detail' poll.id %}"><b>{{poll.poll_title}}</b></a>
+        {% endif %}
 
     {% endfor %}
 
