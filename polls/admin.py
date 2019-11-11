@@ -53,6 +53,9 @@ class QuestionAdmin(admin.ModelAdmin):
         (None,
          {'fields': ['poll', 'question_text']}
          ),
+        ('Ответившие на вопрос:',
+         {'fields': ['users']}
+         ),
     ]
     inlines = [AnswerInline]
 

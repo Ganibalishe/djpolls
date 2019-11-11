@@ -11,9 +11,8 @@
 {% if error_message %} <p><strong>{{error_message}}</strong></p> {% endif %}
 
 {% if user_name %}
-    <form class="needs-validation" action="{% url 'polls:vote' poll.id %}" method="post">
+    <form class="needs-validation" action="{% url 'polls:vote' question.id %}" method="post">
         {% csrf_token %}
-        {% for question in questions %}
             <h5 class="my-0 mr-md-auto font-weight-normal">{{ question.question_text }}</h5>
             <div class="d-block my-3">
             {% for answer in question.answer_set.all %}
@@ -23,7 +22,6 @@
                 </div>
             {% endfor %}
             </div>
-        {% endfor %}
         <button class=  "btn btn-primary my-2" type="submit">Ответить</button>
     </form>
 {% else %}
