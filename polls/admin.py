@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Question, Answer, Polls, PollsStatistic, PollsStatisticAdmin
+from .models import Question, Answer, Polls, PollsStatistic, PollsStatisticAdmin, UserResponses
 
 
 def all_polls(modeladmin, reguest, queryset):
@@ -60,6 +60,7 @@ class QuestionAdmin(admin.ModelAdmin):
     inlines = [AnswerInline]
 
 
+admin.site.register(UserResponses)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Answer)
 admin.site.register(Polls, PollsAdmin)

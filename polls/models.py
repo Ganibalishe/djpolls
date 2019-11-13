@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.db import models
 from django.utils import timezone
 from django.contrib.postgres.fields import ArrayField
+from django.contrib.auth.models import User
 
 
 class Polls(models.Model):
@@ -54,6 +55,16 @@ class PollsStatistic(models.Model):
 
     def __str__(self):
         return self.poll.poll_title
+
+
+class UserResponses(models.Model):
+    user = models.ForeignKey(User, verbose_name=u'account', on_delete=models.CASCADE)
+    poll = models.ForeignKey(Polls, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    answer = models.ForeignKey(Answer, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username
 
 
 class PollsStatisticAdmin(admin.ModelAdmin):
